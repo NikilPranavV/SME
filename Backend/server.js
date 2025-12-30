@@ -13,6 +13,10 @@ const orderRoutes = require("./routes/order");
 const batchRoutes = require('./routes/batch');
 const machineRoutes = require('./routes/machine');
 
+
+const customerRoutes = require('./routes/customer');
+const productRoutes = require('./routes/product');
+
 const app = express();
 
 app.use(cors());
@@ -24,6 +28,10 @@ app.use('/api/supplies', supplyRoutes);
 app.use('/api/order', orderRoutes);
 app.use('/api/machine-usage', batchRoutes);
 app.use('/api/machines', machineRoutes);
+
+
+app.use('/api/customer', customerRoutes);
+app.use('/api/product', productRoutes);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Briquette Manufacturing API');
